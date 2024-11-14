@@ -1,0 +1,6 @@
+﻿services:
+  dns-network-programming:
+    image: dns-network-programming
+    build:
+      context: .
+      dockerfile: Dockerfile
