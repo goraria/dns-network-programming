@@ -1,8 +1,8 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using dns_network_programming.Models;
+using AspnetCoreMvcFull.Models;
 
-namespace dns_network_programming.Controllers;
+namespace AspnetCoreMvcFull.Controllers;
 
 public class HomeController : Controller
 {

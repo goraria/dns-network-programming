@@ -1,4 +1,4 @@
-namespace dns_network_programming.Models;
+namespace AspnetCoreMvcFull.Models;
 
 public class ErrorViewModel
 {
