@@ -11,10 +11,10 @@
   <div
     class='app-brand demo @((@ViewData["navbarFull"] != null && Convert.ToBoolean(@ViewData["navbarFull"])) ? "d-xl-none" : "")'>
     <a asp-controller="Dashboards" asp-action="Index" class="app-brand-link">
-      <span class="app-brand-logo demo">
-        @await Html.PartialAsync("../_Partials/_Macros")
-      </span>
-      <span class="app-brand-text demo menu-text fw-bold ms-2">@TempData.Peek("appName")</span>
+        <span class="app-brand-logo demo">
+            <img src="~/img/logo/prev.png" alt style="width: 64px; height: 64px">
+        </span>
+      <span class="app-brand-text demo menu-text fw-bold ms-2">Cipher</span>
     </a>
 
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -79,40 +79,40 @@
     </li>
 
     <!-- Domain -->
-    <li class='menu-item@(currentPage == "/" ? " active" : "")'>
-      <a asp-controller="Domain" asp-action="Index" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-map"></i>
+    <li class='menu-item@(currentPage == "/Domains" ? " active" : "")'>
+      <a asp-controller="Domains" asp-action="Index" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-book-content"></i>
         <div>Domain</div>
       </a>
     </li>
 
     <!-- Address Record -->
-    <li class='menu-item@(currentPage == "/" ? " active" : "")'>
-      <a asp-controller="Domain" asp-action="Index" class="menu-link">
+    <li class='menu-item@(currentPage == "/Domains/AddressRecord" ? " active" : "")'>
+      <a asp-controller="Domains" asp-action="AddressRecord" class="menu-link">
         <i class="menu-icon tf-icons bx bx-map"></i>
         <div>Address Record</div>
       </a>
     </li>
 
     <!-- Name Server Record -->
-    <li class='menu-item@(currentPage == "/" ? " active" : "")'>
-      <a asp-controller="Domain" asp-action="Index" class="menu-link">
+    <li class='menu-item@(currentPage == "/Domains/NameServerRecord" ? " active" : "")'>
+      <a asp-controller="Domains" asp-action="NameServerRecord" class="menu-link">
         <i class="menu-icon tf-icons bx bx-server"></i>
         <div>Name Server Record</div>
       </a>
     </li>
 
     <!-- Canonical Name Record -->
-    <li class='menu-item@(currentPage == "/" ? " active" : "")'>
-      <a asp-controller="Domain" asp-action="Index" class="menu-link">
+    <li class='menu-item@(currentPage == "/Domains/CanonicalNameRecord" ? " active" : "")'>
+      <a asp-controller="Domains" asp-action="CanonicalNameRecord" class="menu-link">
         <i class="menu-icon tf-icons bx bx-link-alt"></i>
         <div>Canonical Name Record</div>
       </a>
     </li>
 
     <!-- Mail Exchange Record -->
-    <li class='menu-item@(currentPage == "/" ? " active" : "")'>
-      <a asp-controller="Domain" asp-action="Index" class="menu-link">
+    <li class='menu-item@(currentPage == "/Domains/MailExchangeRecord" ? " active" : "")'>
+      <a asp-controller="Domains" asp-action="MailExchangeRecord" class="menu-link">
         <i class="menu-icon tf-icons bx bx-envelope"></i>
         <div>Mail Exchange Record</div>
       </a>
@@ -125,27 +125,6 @@
     <!-- Apps -->
     <!-- Pages -->
     <li class='menu-item@(currentPage.StartsWith("/Pages/Account") ? " active open" : "")'>
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-dock-top"></i>
-        <div>Account Settings</div>
-      </a>
-      <ul class="menu-sub">
-        <li class='menu-item@(currentPage == "/Pages/AccountSettings" ? " active" : "")'>
-          <a asp-controller="Pages" asp-action="AccountSettings" class="menu-link">
-            <div>Account</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Pages/AccountSettingsNotifications" ? " active" : "")'>
-          <a asp-controller="Pages" asp-action="AccountSettingsNotifications" class="menu-link">
-            <div>Notifications</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Pages/AccountSettingsConnections" ? " active" : "")'>
-          <a asp-controller="Pages" asp-action="AccountSettingsConnections" class="menu-link">
-            <div>Connections</div>
-          </a>
-        </li>
-      </ul>
     </li>
     <li class='menu-item@(currentPage.StartsWith("/Auth") ? " active open" : "")'>
       <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -198,130 +177,6 @@
         <div class="text-truncate" data-i18n="Cards">Cards</div>
       </a>
     </li>
-    <!-- User interface -->
-    <li class='menu-item@(currentPage.StartsWith("/Ui") ? " active open" : "")'>
-      <a href="javascript:void(0)" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-box"></i>
-        <div>User interface</div>
-      </a>
-      <ul class="menu-sub">
-        <li class='menu-item@(currentPage == "/Ui/Accordion" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Accordion" class="menu-link">
-            <div>Accordion</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Alerts" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Alerts" class="menu-link">
-            <div>Alerts</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Badges" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Badges" class="menu-link">
-            <div>Badges</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Buttons" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Buttons" class="menu-link">
-            <div>Buttons</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Carousel" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Carousel" class="menu-link">
-            <div>Carousel</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Collapse" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Collapse" class="menu-link">
-            <div>Collapse</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Dropdowns" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Dropdowns" class="menu-link">
-            <div>Dropdowns</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Footer" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Footer" class="menu-link">
-            <div>Footer</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/ListGroups" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="ListGroups" class="menu-link">
-            <div>List groups</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Modals" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Modals" class="menu-link">
-            <div>Modals</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Navbar" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Navbar" class="menu-link">
-            <div>Navbar</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Offcanvas" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Offcanvas" class="menu-link">
-            <div>Offcanvas</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/PaginationBreadcrumbs" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="PaginationBreadcrumbs" class="menu-link">
-            <div>Pagination &amp; Breadcrumbs</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Progress" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Progress" class="menu-link">
-            <div>Progress</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Spinners" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Spinners" class="menu-link">
-            <div>Spinners</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/TabsPills" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="TabsPills" class="menu-link">
-            <div>Tabs &amp; Pills</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Toasts" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Toasts" class="menu-link">
-            <div>Toasts</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/TooltipsPopovers" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="TooltipsPopovers" class="menu-link">
-            <div>Tooltips &amp; Popovers</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/Ui/Typography" ? " active" : "")'>
-          <a asp-controller="Ui" asp-action="Typography" class="menu-link">
-            <div>Typography</div>
-          </a>
-        </li>
-      </ul>
-    </li>
-
-    <!-- Extended components -->
-    <li class='menu-item@(currentPage.StartsWith("/ExtendedUi") ? " active open" : "")'>
-      <a href="javascript:void(0)" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-copy"></i>
-        <div>Extended UI</div>
-      </a>
-      <ul class="menu-sub">
-        <li class='menu-item@(currentPage == "/ExtendedUi/PerfectScrollbar" ? " active" : "")'>
-          <a asp-controller="ExtendedUi" asp-action="PerfectScrollbar" class="menu-link">
-            <div>Perfect scrollbar</div>
-          </a>
-        </li>
-        <li class='menu-item@(currentPage == "/ExtendedUi/TextDivider" ? " active" : "")'>
-          <a asp-controller="ExtendedUi" asp-action="TextDivider" class="menu-link">
-            <div>Text Divider</div>
-          </a>
-        </li>
-      </ul>
-    </li>
 
     <!-- Icons -->
     <li class='menu-item@(currentPage == "/Icons/Boxicons" ? " active" : "")'>
@@ -370,25 +225,18 @@
         </li>
       </ul>
     </li>
-    <!-- Tables -->
-    <li class='menu-item@(currentPage == "/Tables/Basic" ? " active" : "")'>
-      <a asp-controller="Tables" asp-action="Basic" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-table"></i>
-        <div>Tables</div>
-      </a>
-    </li>
     <!-- Misc -->
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
     <li class="menu-item">
-      <a href='@TempData.Peek("support")' target="_blank" class="menu-link">
+      <a href='#' class="menu-link">
         <i class="menu-icon tf-icons bx bx-support"></i>
-        <div>Support</div>
+        <div>Zamcha</div>
       </a>
     </li>
     <li class="menu-item">
-      <a href='@TempData.Peek("documentation")' target="_blank" class="menu-link">
+      <a href='#' class="menu-link">
         <i class="menu-icon tf-icons bx bx-file"></i>
-        <div>Documentation</div>
+        <div>Japtor</div>
       </a>
     </li>
   </ul>
