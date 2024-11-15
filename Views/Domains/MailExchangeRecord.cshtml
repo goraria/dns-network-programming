@@ -1,14 +1,50 @@
 @{
     ViewData["Title"] = "Mail Exchange Record";
 }
-
+@model dns_network_programming.ViewModel.DomainVM
 @* ************** Content ************** *@
 <div class="row g-6">
     <div class="col-md-12">
         <div class="card mb-6">
             <h5 class="card-header">Mail Exchange Record</h5>
             <div class="card-body demo-vertical-spacing demo-only-element">
+                <form asp-action="MailExchangeRecord" asp-controller="Domains">
+                    <div class="row mb-6">
+                        <label asp-for="@Model.IPAdress" class="col-sm-3 col-form-label" class="mb-0"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="@Model.IPAdress" type="text" class="form-control" placeholder="11.22.33.44" />
+                        </div>
+                    </div>
+                    <div class="row mb-6">
+                        <label asp-for="@Model.Domain" class="col-sm-3 col-form-label" class="mb-0 "></label>
+                        <div class="col-sm-10">
+                            <input asp-for="@Model.Domain" type="text" class="form-control" placeholder="viettechgroup.vn" />
+                        </div>
+                    </div>
+                   
+                    <div class="row justify-content-end">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Seacrh</button>
+                        </div>
+                    </div>
+                </form>
 
+                <div class="row">
+                    <div class="mb-0">
+                        <label asp-for="@Model.NameServer" class="mb-0"></label>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <textarea readonly>
+                            @{
+                                if (Model != null && !string.IsNullOrEmpty(Model.NameServer))
+                                {
+                                    @Model.NameServer
+                                }
+                            }
+                                  </textarea>
+
+                    </div>
+                </div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon11">&#64;</span>
                     <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon11" />
