@@ -406,3 +406,6 @@ ASALocalRun/
 # wal and shm files - SQLite
 *-wal
 *-shm
+
+# IDEA
+.idea
