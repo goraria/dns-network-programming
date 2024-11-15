@@ -1,14 +1,61 @@
 @{
     ViewData["Title"] = "Address Record";
 }
-
+@model dns_network_programming.ViewModel.AddressVM
 @* ************** Content ************** *@
 <div class="row g-6">
     <div class="col-md-12">
         <div class="card mb-6">
             <h5 class="card-header">Address Record</h5>
             <div class="card-body demo-vertical-spacing demo-only-element">
+                <form asp-action="AddressRecord" asp-controller="Domains">
+                    
+                    <div class="row mb-6">
+                        <label asp-for="@Model.Domain" class="col-sm-3 col-form-label" class="mb-0 "></label>
+                        <div class="col-sm-10">
+                            <input asp-for="@Model.Domain" type="text" class="form-control" placeholder="viettechgroup.vn" />
+                        </div>
+                    </div>
 
+                    <div class="row justify-content-end">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Seacrh</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row">
+                    <div class="mb-0">
+                        <label asp-for="@Model.IpAddress" class="mb-0"></label>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <textarea readonly>
+                            @{
+                                if (Model != null && !string.IsNullOrEmpty(Model.IpAddress))
+                                {
+                                    @Model.IpAddress
+                                }
+                            }
+                                  </textarea>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-0">
+                        <label asp-for="@Model.HostName" class="mb-0"></label>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <textarea readonly>
+                            @{
+                                if (Model != null && !string.IsNullOrEmpty(Model.HostName))
+                                {
+                                    @Model.HostName
+                                }
+                            }
+                                  </textarea>
+
+                    </div>
+                </div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon11">&#64;</span>
                     <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon11" />
