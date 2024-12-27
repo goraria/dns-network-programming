@@ -1,6 +1,6 @@
 <p align="center">
    <a href="#" target="_blank">
-      <img src="https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci9lZDQwMmM1NjY2YjJlNjUxMTIyOWE4ZjM0NDdkNWMzYT9zaXplPTQ5NiZkZWZhdWx0PXJldHJvIn0.37HzV5jk9qm3y0yABAg-65jGiYRBG5FTCxVlwnefA9E" alt="logo" width="60px" height="auto">
+      <img src="https://drive.inet.vn/uploads/donv@inet.vn/ticketattachments/file-1695281963522_1695281962905.jpg" alt="logo" width="60px" height="auto">
    </a>
 </p>
 

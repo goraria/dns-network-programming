@@ -1,0 +1,6 @@
+﻿services:
+  dns:
+    image: dns
+    build:
+      context: .
+      dockerfile: Dockerfile

@@ -1,16 +1,47 @@
 @{
-    ViewData["Title"] = "Domain";
+    ViewData["Title"] = "Record";
 }
-
+@* @model AspnetCoreMvcFull.Models.Record *@
 @* ************** Content ************** *@
-<div class="row">
-    <!-- Order Statistics -->
-    <div class="col-md-12 col-lg-12 col-xl-12 order-0 mb-6">
-        <div class="card">
-            <div class="card-header d-flex justify-content-between">
-                <div class="card-title mb-0">
-                    <h5 class="mb-1 me-2">Order Statistics</h5>
-                    <p>Lam vao day</p>
+@model AspnetCoreMvcFull.Models.Record
+<div class="row g-6">
+    <div class="col-md-8">
+        <div class="card mb-6">
+            <h5 class="card-header">Record</h5>
+            <div class="card-body demo-vertical-spacing demo-only-element">
+                <form method="post">
+                    <label for="domain">Domain:</label>
+                    <input type="text" id="domain" name="Domain" value="@Model.Domain" />
+                    <label for="recordType">Record Type:</label>
+                    <select id="recordType" name="recordType">
+                        <option value="A">A</option>
+                        <option value="NS">NS</option>
+                        <option value="CNAME">CNAME</option>
+                        <option value="MX">MX</option>
+                    </select>
+                    <button type="submit">Query</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-6">
+            <h5 class="card-header">Result</h5>
+            <div class="card-body demo-vertical-spacing demo-only-element">
+                <div class="input-group">
+                    <span class="input-group-text">Result</span>
+                    <textarea class="form-control" aria-label="With textarea" placeholder="Comment">
+                        @if (!string.IsNullOrEmpty(Model.IpAddress[0])) { <p>IP Address: @Model.IpAddress</p> }
+                    </textarea>
+                    @* <textarea class="form-control" aria-label="With textarea" placeholder="Comment"> *@
+                    @*     @if (!string.IsNullOrEmpty(Model.NameServer)) { <p>Name Server: @Model.NameServer</p> } *@
+                    @* </textarea> *@
+                    <textarea class="form-control" aria-label="With textarea" placeholder="Comment">
+                        @if (!string.IsNullOrEmpty(Model.CanonicalName[0])) { <p>Canonical Name: @Model.CanonicalName</p> }
+                    </textarea>
+                    <textarea class="form-control" aria-label="With textarea" placeholder="Comment">
+                        @if (!string.IsNullOrEmpty(Model.MailExchange[0])) { <p>Mail Exchange: @Model.MailExchange</p> }
+                    </textarea>
                 </div>
             </div>
         </div>
